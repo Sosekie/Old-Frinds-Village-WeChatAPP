@@ -1,0 +1,97 @@
+/* pages/user/register/index.wxss */
+.back_img image {
+  width: 110vw;
+  height: 105vh;
+  overflow: hidden;
+  margin: 0 0 0vw -10vw;
+  border-radius: 0;
+  position: fixed;
+  z-index: -1;
+  display: block;
+}
+
+.welcome {
+  color: #EAD69E;
+  position: fixed;
+  width: 67.6vw;
+  margin: 10vh 13.3vw;
+  background-color: #A68B57aa;
+  color: #fff;
+  padding: 3.3vw;
+  border-radius: 2vw;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  /* width: 90%; */
+  margin: 3.3vw 13.3vw 0;
+  background-color: #ffffffee;
+  border-radius: 24rpx;
+  padding: 3.3vw 3.3vw;
+  box-shadow: 0px 11px 34px rgba(158, 158, 158, 0.1),
+    0px 5.9437px 18.4156px rgba(153, 153, 153, 0.075),
+    0px 4.2px 51.775px rgba(156, 156, 156, 0.05),
+    0px 3.10625px 7.74687px rgba(151, 151, 151, 0.075);
+  border-radius: 2vw;
+}
+
+.input {
+  margin-left: 20rpx;
+}
+
+.container-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.head-img {
+  border: solid #dedede 1rpx;
+  border-radius: 50%;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.camera {
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 1;
+  margin-top: -50rpx;
+  margin-left: 100rpx;
+}
+
+.tip-img {
+  color: #5a5a5a;
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: small;
+}
+
+.head {
+  background-color: #ffffffaa;
+  border-radius: 2vw;
+  margin: 20vh 13.3vw 3.3vw 13.3vw;
+  padding: 3.3vw 3.3vw;
+  box-shadow: 0px 11px 34px rgba(158, 158, 158, 0.1),
+    0px 5.9437px 18.4156px rgba(153, 153, 153, 0.075),
+    0px 4.2px 51.775px rgba(156, 156, 156, 0.05),
+    0px 3.10625px 7.74687px rgba(151, 151, 151, 0.075);
+}
+
+
+
+.button {
+  width: 200rpx;
+  margin: 50rpx auto;
+  background-color: #A68B57;
+  color: #fff;
+}
+
+.tip {
+  width: 75%;
+  margin: auto;
+  font-size: small;
+  color: rgb(247, 109, 109);
+}

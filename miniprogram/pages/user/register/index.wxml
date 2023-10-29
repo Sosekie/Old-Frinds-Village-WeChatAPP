@@ -1,0 +1,46 @@
+<!--pages/user/register/index.wxml-->
+<view class="back_img">
+  <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/我的.gif"></image>
+</view>
+<view class="welcome">
+  欢迎使用再过故人庄小程序
+</view>
+<view class="register-form">
+  <view class="head">
+    <view class="container-img">
+      <image class="head-img" src="{{headSrc}}" bindtap="upLoadHead"></image>
+    </view>
+    <view class="container-img">
+      <image class="camera" src="../../../images/icon/camera.png"></image>
+    </view>
+    <view class="tip-img">点击图片上传头像</view>
+  </view>
+  <view class="main">
+    <view class="container">
+      <view>账号</view>
+      <input class="input" name="username" value="{{uername}}" placeholder="请输入用户名" bindinput="inputUsername" bindblur="usernameTip" />
+    </view>
+    <van-transition show="{{usernameTip}}" custom-class="block">
+      <view class="tip">
+        <view>用户名长度为6-11位</view>
+      </view>
+    </van-transition>
+    <van-transition show="{{usernameRepeat}}" custom-class="block">
+      <view class="tip">
+        <view>账号已存在</view>
+      </view>
+    </van-transition>
+    <view class="container">
+      <view>密码</view>
+      <input class="input" name="password" value="{{password}}" placeholder="请输入密码" type="password" bindinput="inputPassword" bindblur="passwordTip" />
+    </view>
+  </view>
+  <van-transition show="{{passwordTip}}" custom-class="block">
+    <view class="tip">
+      <view>密码长度为6-18位</view>
+    </view>
+  </van-transition>
+  <view class="button-view">
+    <button class="button" form-type="submit" bindtap="submit">注册</button>
+  </view>
+</view>

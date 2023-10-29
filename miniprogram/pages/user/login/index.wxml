@@ -1,0 +1,30 @@
+<!--pages/user/login/index.wxml-->
+<view class="login-form">
+  <view class="back_img">
+    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/我的.gif"></image>
+  </view>
+  <view class="container-1">
+    <image class="icon" src="../../../images/icon/user.png"></image>
+    <input class="input" name="username" value="{{uername}}" placeholder="请输入用户名" bindinput="inputUsername" bindblur="usernameTip" />
+  </view>
+  <van-transition show="{{usernameTip}}" custom-class="block">
+    <view class="tip">
+      <view>账号长度为6-11位</view>
+    </view>
+  </van-transition>
+  <view class="container-2">
+    <image class="icon" src="../../../images/icon/password.png"></image>
+    <input class="input" name="password" value="{{password}}" placeholder="请输入密码" type="password" bindinput="inputPassword" bindblur="passwordTip" />
+  </view>
+  <van-transition show="{{passwordTip}}" custom-class="block">
+    <view class="tip">
+      <view>密码长度为6-18位</view>
+    </view>
+  </van-transition>
+  <view class="button-view">
+    <button class="button" form-type="submit" bindtap="submit">登录</button>
+  </view>
+</view>
+<view class="register" bindtap="register">
+  点击注册
+</view>

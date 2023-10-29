@@ -1,0 +1,149 @@
+.renling {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100vw;
+  color: #fdc22b;
+  font-size: 5vw;
+  text-align: center;
+  padding: 1vw 0;
+  background-color: #A68B57;
+  color: #fff;
+  border-radius: 2vw 2vw 0 0;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125)
+}
+
+.back_img image {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* margin: -4vw 0 0vw -4vw; */
+  border-radius: 0;
+  position: fixed;
+  z-index: -1;
+  display: block;
+}
+
+.farm_bar {
+  display: flex;
+  flex-direction: column
+}
+
+.plant_pic ._img {
+  height: 50vw;
+  width: 100vw;
+  object-fit: cover;
+  border-radius: 2vw;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125)
+}
+
+.dis {
+  padding: 3.3vw 3.3vw 0 3.3vw;
+  display: flex;
+  flex-direction: column
+}
+
+.name {
+  font-size: 6vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  /* color: #000; */
+  text-align: center;
+  padding: 1vw 3.3vw;
+  background-color: #A68B57ee;
+  color: #fff;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  margin: 0 0 3.3vw 0
+}
+
+.discrip {
+  font-size: 4vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #000;
+  text-align: center;
+  background-color: #fffa;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  margin: 0 0 3.3vw 0;
+  padding: 0 0 3.3vw 0;
+}
+
+.plant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 1vw;
+  color: #555;
+}
+
+.plant:nth-child(2n) {
+  background-color: #A68B5755;
+  margin: 0 3.3vw;
+  border-radius: 2vw;
+  color: #333;
+}
+
+.low_pic {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  overflow: hidden;
+  margin: 0 0 10vh 0;
+  padding: 0 3.3vw 3.3vw 3.3vw
+}
+
+.low_pic ._img {
+  height: 50vw;
+  width: 93.4vw;
+  object-fit: cover;
+  border-radius: 2vw;
+  margin: 0 0 3.3vw 0;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125)
+}
+
+.modal_dialog {
+  position: fixed;
+  /* height: 60vh; */
+  width: 63.4vw;
+  top: 30vh;
+  left: 15vw;
+  z-index: 999;
+  background-color: #fffc;
+  border-radius: 2vw;
+  font-size: 5vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #000;
+  text-align: center;
+  padding: 3.3vw;
+}
+
+.modal_dialog_title {
+  font-size: 6vw;
+  margin: 0 0 3.3vw 0;
+}
+
+.modal_dialog_queren {
+  margin: 3.3vw 0 0 0;
+  width: 23.3vw;
+  background-color: #fff;
+  border-radius: 2vw;
+  font-size: 5vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #000;
+  text-align: center;
+  padding: 3.3vw;
+}
+
+.modal_dialog_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+}

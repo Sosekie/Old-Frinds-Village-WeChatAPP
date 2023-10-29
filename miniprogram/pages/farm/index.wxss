@@ -1,0 +1,158 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-end;
+  /* background-color: #7ba0a8; */
+  padding: 3.3vw 0;
+}
+
+.back_img image {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* margin: -4vw 0 0vw -4vw; */
+  border-radius: 0;
+  position: fixed;
+  z-index: -1;
+  display: block;
+}
+
+.hot {
+  font-size: 5vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  padding: 1vw 3.3vw;
+  /* background-color: #b3c6c4; */
+  color: #a68a58;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 3.3vw;
+  margin-bottom: 80vh;
+}
+
+.xiahua {
+  font-size: 5vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  padding: 1vw 3.3vw;
+  color: #a68a58;
+  background-color: #fff;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 3.3vw;
+}
+
+.farm_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 3.3vw 3.3vw 0 3.3vw;
+}
+
+.farm_card .farm_img {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-content: center
+}
+
+.farm_card .farm_img image {
+  width: 80vw;
+  height: 80vw;
+  z-index: 1;
+  -webkit-filter: drop-shadow(5px 5px 4px #5e5498);
+  filter: drop-shadow(5px 5px 4px #5e5498)
+}
+
+.farm_card .farm_name {
+  position: absolute;
+  z-index: 999;
+  width: 93.4vw;
+  height: 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 3.3vw 0 0 0
+}
+
+.farm_card .farm_name .name {
+  font-size: 5vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  height: 6vw;
+  padding: 1vw 3.3vw;
+  background-color: #A68B57aa;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  display: flex;
+  justify-content: center;
+  align-content: center
+}
+
+.farm_card .farm_name .name image {
+  width: 20vw;
+  margin: -5vw 2vw 0 -10vw
+}
+
+.low {
+  font-size: 4vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  text-align: center;
+  /* background-color: #A68B57aa; */
+  color: #fff;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: -20vw 0 0 0;
+  z-index: 5;
+}
+
+.low .position,
+.farm_type,
+.hot_point,
+.empty {
+  z-index: 5;
+  background-color: #fff;
+  padding: 1vw 3.3vw;
+  color: #A68B57;
+  background-color: #A68B57aa;
+  color: #fff;
+}
+
+.low .farm_type,
+.empty {
+
+  z-index: 5;
+  background-color: #fffa;
+  padding: 1vw 3.3vw;
+  color: #A68B57;
+}
+
+.farm_back {
+  background-color: #9fbfabaa;
+  border-radius: 3.3vw;
+}
+
+.position image {
+  width: 5vw;
+  margin: 0 1vw -1vw 0;
+}

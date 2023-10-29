@@ -1,0 +1,50 @@
+<view>
+  <view class="content">
+    <view class="back_img">
+      <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/土地背景.jpg"></image>
+    </view>
+    <block wx:for="{{farm_renLing}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="farm" wx:if="{{item._id==farm_id}}">
+        <block wx:for="{{item.land}}" wx:for-item="tian" wx:for-index="index" wx:key="index">
+          <block wx:if="{{tian.id==land_id}}">
+            <view class="farm_bar">
+              <view class="plant_pic">
+                <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/plant/{{tian.plant}}/1.jpg" mode class="_img" mode="widthFix"></image>
+              </view>
+              <view class="dis">
+                <view class="name">{{''+tian.name+''}}</view>
+                <view class="discrip">
+                  <view class="plant">{{'种植作物：'+tian.plant+''}}</view>
+                  <view class="plant">{{'生长周期：'+tian.growth_cycle+'天'}}</view>
+                  <!-- <view class="plant">{{'田地类型：'+tian.tian_type+''}}</view> -->
+                  <view class="plant">{{'开始种植时间：'+tian.start_time+''}}</view>
+                  <view class="plant">{{'预计成熟时间：'+tian.end_time+''}}</view>
+                  <view class="plant">{{'预计加工时间：'+tian.manage_time+'天'}}</view>
+                  <view class="plant">{{'单位面积平均产量：'+tian.average+'千克/平方米'}}</view>
+                  <view class="plant">{{'总面积：'+tian.area+'平方米'}}</view>
+                  <view class="plant">{{'预计总产量：'+tian.average*tian.area+'千克'}}</view>
+                </view>
+                <view class="name">农产品详情</view>
+              </view>
+              <view class="low_pic">
+                <block wx:for="{{[2, 3, 4, 5, 6, 7, 8, 9, 10]}}" wx:for-item="i">
+                  <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/plant/{{tian.plant}}/{{i}}.jpg" alt class="_img" mode="widthFix"></image>
+                </block>
+              </view>
+              <button class="renling" bindtap="showModal">立即认领</button>
+              <view class="modal_dialog" wx:if="{{showModal}}">
+                <view class="modal_dialog_title">确认要认领该土地？</view>
+                <view></view>
+                <view>总费用：{{tian.cost}}元</view>
+                <view class="modal_dialog_button">
+                  <view class="modal_dialog_queren" bindtap="hideModal" wx:if="{{showModal}}">取消</view>
+                  <view class="modal_dialog_queren" bindtap="hideModalAdd" wx:if="{{showModal}}">确认</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

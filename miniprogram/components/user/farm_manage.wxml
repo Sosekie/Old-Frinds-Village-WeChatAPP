@@ -1,0 +1,123 @@
+<view>
+  <view class="back_img">
+    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/我的.gif" mode="widthFix"></image>
+  </view>
+  <view class="farm_manage">
+    <view class="nav">
+      <view class="button">
+        <view bindtap="checked" data-id="{{1}}" class="{{[(isActive==1)?'active':'']}}">我认领的</view>
+      </view>
+      <view class="button">
+        <view bindtap="checked" data-id="{{2}}" class="{{[(isActive==2)?'active':'']}}">我管理的</view>
+      </view>
+    </view>
+    <view class="menu">
+      <block wx:for="{{farm_manage}}" wx:for-item="item" wx:for-index="__i0__">
+        <block wx:if="{{isActive==1}}">
+          <view class="myget">
+            <view class="gethead">
+              <view class="getheadleft">
+                <image src="{{item.poster}}" alt class="_img"></image>
+              </view>
+              <view class="getheadright">
+                <view class="name">{{''+item.name+''}}</view>
+                <view class="farm_type">
+                  <view class="type">{{'主营：'+item.type+''}}</view>
+                  <view class="type">{{'地址：'+item.position+''}}</view>
+                  <!-- <view class="type">{{'我认领的土地数：'+item.myget+"/"+item.sum+''}}</view> -->
+                </view>
+              </view>
+            </view>
+            <view class="getbottom">
+              <view class="land">
+                <view class="landbarhead">
+                  <view class="name">田地名称</view>
+                  <view class="plant">种植作物</view>
+                  <view class="output">预计产量</view>
+                  <view class="people">认领数量(平米)</view>
+                </view>
+                <block wx:for="{{item.land}}" wx:for-item="landitem" wx:for-index="__i1__" wx:if="{{landitem.rent_people==user_id}}">
+                  <view class="landbar">
+                    <view class="name">{{''+landitem.name+''}}</view>
+                    <view class="plant">{{''+landitem.plant+''}}</view>
+                    <view class="output">{{''+landitem.output+''}}</view>
+                    <view class="people">{{''+landitem.area+''}}</view>
+                  </view>
+                </block>
+              </view>
+            </view>
+            <navigator url="{{'/pages/farm/farm_information/farm_information?cs1='+item._id}}">
+              <view class="more">查看该农场更多信息-></view>
+            </navigator>
+          </view>
+        </block>
+      </block>
+      <block wx:if="{{isActive==2}}">
+        <view class="myown">
+          <block wx:if="{{user_type=='0'}}">
+            <view class="not">
+              <view class="farm_title1">加入我们，成为故人庄农场主！</view>
+              <view class="farm_box">
+                <view class="farm_title2">如何入驻成为农场主？</view>
+                <view class="farm_text">点击下方“立即入驻”，即可开始办理入驻手续。您需要填写您的联系方式和农田所在地址，上传您的身份证件，并提供您的农田照片信息。</view>
+              </view>
+              <view class="farm_box">
+                <view class="farm_title2">成为农场主的入驻条件？</view>
+                <view class="farm_text">您需要有自己的合法农田，规范的身份信息，我们将对您上传的每亩农田的信息进行审核调查。验证成功后，我们将对您的农田进行编号并发放“电子身份证”，每亩农田的“电子身份证”在平台上是唯一的。如果您的材料不符合平台要求，我们会通知您并告诉您材料修改方式。</view>
+              </view>
+              <view class="farm_box">
+                <view class="farm_title2">运营及收益说明</view>
+                <view class="farm_text">本着支持乡村振兴战略的初心，平台将为您提供免费的线上认领和管理服务，在此期间不收取您任何手续费用和管理费用。</view>
+              </view>
+              <view class="ruzhu" bindtap="tishi">立即入驻</view>
+            </view>
+          </block>
+          <block wx:if="{{user_type=='1'}}">
+            <view class="yes">
+              <block wx:for="{{farm_manage}}" wx:for-item="item" wx:key="index">
+                <view class="myget">
+                  <view class="gethead">
+                    <view class="getheadleft">
+                      <image src="{{item.poster}}" alt class="_img"></image>
+                    </view>
+                    <view class="getheadright">
+                      <view class="name">{{''+item.name+''}}</view>
+                      <view class="farm_type">
+                        <view class="type">{{'主营：'+item.type+''}}</view>
+                        <view class="type">{{'地址：'+item.position+''}}</view>
+                        <view class="type">{{'空闲土地数：'+item.empty_sum+"/"+item.sum+''}}</view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="getbottom">
+                    <view class="land">
+                      <view class="landbarhead">
+                        <view class="name">田地名称</view>
+                        <view class="plant">种植作物</view>
+                        <view class="output">预计产量</view>
+                        <view class="output">认领用户</view>
+                        <view class="output">认领平米</view>
+                      </view>
+                      <block wx:for="{{item.land}}" wx:for-item="landitem" wx:for-index="__i3__">
+                        <view class="landbar">
+                          <view class="name">{{''+landitem.name+''}}</view>
+                          <view class="plant">{{''+landitem.plant+''}}</view>
+                          <view class="output">{{''+landitem.output+''}}</view>
+                          <view class="output">匿名用户</view>
+                          <view class="output">{{''+landitem.area+''}}</view>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                  <navigator url="{{'/pages/farm/farm_information/farm_information?cs1='+item.id}}">
+                    <view class="more">查看该农场更多信息-></view>
+                  </navigator>
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,145 @@
+<view class="out_up">
+  <!--pages/up/index.wxml-->
+  <view class="back_img">
+    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/上传.gif"></image>
+    <!-- <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/配乐背景.png"></image> -->
+  </view>
+  <view class="xiahua">
+    <view>
+      下滑发布您的乡旅动态吧！
+    </view>
+    <!-- <view>
+      下滑为您的视频智能配乐吧！
+    </view> -->
+    <view>↓</view>
+  </view>
+  <view class="up-body">
+    <view class="view-button" style="margin: 0;">
+      <text></text>
+      <van-button class="but-back" type="primary" size="small" disabled="{{desc===''||imgList.length===0 ? true : false}}" bindtap="upload">发布</van-button>
+    </view>
+    <view class="upload">
+      <view class="upload_title">
+        <textarea placeholder="点击输入标题" auto-height maxlength="20" value="{{title}}" bindinput="inputtitle" />
+      </view>
+      <view class="dividing-line-title"></view>
+      <textarea class="desc" placeholder="请输入内容，并上传您的乡旅图片" value="{{desc}}" bindinput="getInput" />
+      <view class="iamgeRootAll">
+        <block wx:for="{{imgList}}" wx:key="index">
+          <view class="imgItem">
+            <image class="img" src='{{item}}' mode='aspectFill'></image>
+            <image class="closeImg" bindtap="DeleteImg" src="../../images/close.png" data-index="{{index}}"></image>
+          </view>
+        </block>
+        <!-- 选择图片按钮 -->
+        <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
+          <image class="photo" src="../../images/photo.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="view-music-product">
+    <view class="card">
+      <view class="view-icon">
+        <image class="icon" src="../../images/audioplayer/audioplayer.png" />
+      </view>
+      <view class="song-name">
+        <text>{{songName}}</text>
+      </view>
+      <view class="control">
+        <image class="arrow" src="../../images/audioplayer/left-arrow.png" bindtap="preSong" />
+        <image wx:if="{{!isPlay}}" class="play" src="../../images/audioplayer/play.png" bindtap="playChange" />
+        <image wx:if="{{isPlay}}" class="play" src="../../images/audioplayer/suspend.png" bindtap="playChange" />
+        <image class="arrow" src="../../images/audioplayer/right-arrow.png" bindtap="nextSong" />
+      </view>
+    </view>
+    <view class="fun-list-sec">
+      <view class="match-music" bindtap="matchMusic">
+        <van-collapse value="{{ activeNames }}" bind:change="onChange" border="{{false}}">
+          <van-collapse-item name="1" title="自动配乐" size="large" icon="audio" title-class="match-music-text">
+            <view class="emotion">
+              <image class="img" src="../../images/icon/emotion.png" />
+              <!-- <view class="tag" wx:for="{{emtions}}">
+                {{item}}
+              </view> -->
+              <view class="tag_box">
+                图片情绪值：
+                <!-- 图片情绪值：将用户要上传的第一张图片上传到后端，分析情绪值返回图片情绪值 -->
+                <view class="tag">
+                  0.8232
+                </view>
+              </view>
+            </view>
+            <view class="songs">
+              <image class="img" src="../../images/icon/music-recom.png" />
+              <view class="container">
+                <view class="{{index == songValue ? 'tag-sel' : 'tag'}}" wx:for="{{songs}}" bindtap="selSong" data-index="{{index}}">
+                  <view class="music_name">
+                    {{item.name}}
+                  </view>
+                  <!-- 音乐情绪值：返回图片情绪值的同时也会返回音乐情绪值，这部分问建阳怎么给你 -->
+                  <view class="music_emo">
+                    情绪值：0.8233
+                  </view>
+                </view>
+              </view>
+            </view>
+            <!-- 匹配损失是图片情绪值和视频情绪值的差值的绝对值，自己计算吧 -->
+            <view class="songs_loss">
+              匹配损失：0.0001
+            </view>
+          </van-collapse-item>
+        </van-collapse>
+      </view>
+      <!-- <view class="{{sitCol?'match-situation-zhankai':'match-situation'}}" bindtap="matchsituation"> -->
+      <view class="match-music" bindtap="matchsituation">
+        <van-collapse value="{{ activeNames2 }}" bind:change="onChange2" border="{{false}}" style="margin: 0vw 0vw;">
+          <van-collapse-item name="1" title="推荐场景" size="large" icon="bars" title-class="match-music-text">
+            <view class="songs">
+              <image class="img" src="../../images/icon/situation.png" />
+              <view class="container">
+                <view class="{{index == sValue ? 'tag-sel' : 'tag'}}" wx:for="{{situation}}" bindtap="sels" data-index="{{index}}">
+                  {{item.name}}
+                </view>
+              </view>
+            </view>
+          </van-collapse-item>
+        </van-collapse>
+      </view>
+    </view>
+    <view class="card">
+      <view class="selProPhoto" bindtap="selProPhoto">
+        <image class="product-img" src="../../images/icon/product-upload.png"></image>
+      </view>
+      <view class="view-product-description">
+        <input class="input" placeholder="点击为产品添加描述吧~" maxlength="19" value="{{description}}" bindinput="inputDescription" />
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="fun-list">
+    <view class="location" hover-class="hover-location" bindtap="chooseLocation">
+      <image wx-if="{{!locStatus}}" class="icon" src="../../images/icon/distance.png" />
+      <image wx-if="{{locStatus}}" class="icon" src="../../images/icon/distance-green.png" />
+      <text class="{{locStatus ? 'text-green' : 'text'}}">{{location}}</text>
+      <image class="arrow" src="../../images/icon/right-arrow.png" />
+    </view>
+    <view class="product" hover-class="hover-product" bindtap="popShow">
+      <image wx-if="{{!proStatus}}" class="icon" src="../../images/icon/shop.png" />
+      <image wx-if="{{proStatus}}" class="icon" src="../../images/icon/shop-blue.png" />
+      <text class="{{proStatus!='' ? 'text-blue' : 'text'}}">{{productName}}</text>
+      <image class="arrow" src="../../images/icon/right-arrow.png" />
+    </view>
+  </view>
+
+  <view class="product-dialog">
+    <van-popup show="{{ popShow }}" position="bottom" round bind:close="onPopClose">
+      <van-picker columns="{{products}}" show-toolbar title="推荐好物" bind:cancel="onPickerCancel" bind:change="onPickerChange" bind:confirm="onPickerConfirm" />
+    </van-popup>
+    <!-- <van-dialog use-slot title="产品名称" show="{{ popShow }}" bind:confirm="dialogConfirm">
+     <input auto-height="{{true}}" value="{{productName}}" placeholder="输入要推荐的产品名称吧" bindinput="inputProName" />
+  </van-dialog>-->
+  </view>
+</view>

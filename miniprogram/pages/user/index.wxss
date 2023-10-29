@@ -1,0 +1,227 @@
+/* pages/user/index.wxss */
+.user-head {
+  margin-top: -50rpx;
+  margin-left: 40rpx;
+  border: solid #fff;
+  border-radius: 50%;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+
+.back_img image {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* margin: -4vw 0 0vw -4vw; */
+  border-radius: 0;
+  position: fixed;
+  z-index: -1;
+  display: block;
+}
+
+.foreground {
+  width: 100%;
+  margin-top: 30vh;
+  /* margin-bottom: 10vh; */
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color: #ffffffaa;
+}
+
+.background {
+  background-color: #e9efff;
+  width: 100%;
+  /* height: 250rpx; */
+}
+
+.user-info-text {
+  margin-left: 40rpx;
+}
+
+.username {
+  margin-top: 20rpx;
+  font-weight: 700;
+  font-size: 40rpx;
+}
+
+.user-num {
+  margin-top: 15rpx;
+  font-size: 25rpx;
+  color: #555;
+}
+
+.gap-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.home-header-line {
+  height: 1rpx;
+  width: 90%;
+  background-color: #efefef;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.user-info-tag {
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 10rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  background-color: #f0f0f0;
+  margin: 10rpx;
+  font-size: 23rpx;
+  border-radius: 7%;
+}
+
+.tag .icon {
+  height: 21rpx;
+  width: 21rpx;
+}
+
+.tag .message {
+  margin-left: 7rpx;
+  vertical-align: 5%;
+
+}
+
+.user-info-intro {
+  margin-left: 40rpx;
+  margin-top: 7rpx;
+  font-size: 25rpx;
+}
+
+.row-container {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.col-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weight-num {
+  font-weight: 600;
+  font-size: 28rpx;
+  margin-top: 5rpx;
+}
+
+.gray-font {
+  color: #676767;
+  font-size: 27rpx;
+}
+
+.gap-line-col {
+  width: 2rpx;
+  height: 55rpx;
+  background-color: #efefef;
+}
+
+.fun-img {
+  height: 38rpx;
+  width: 38rpx;
+}
+
+.fun-text {
+  margin-left: 30rpx;
+  vertical-align: 17%;
+  font-weight: 600;
+  font-size: 25rpx;
+}
+
+
+.funtion {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 3.3vw;
+}
+
+.fun {
+  background-color: #A68B5788;
+  margin-left: 40rpx;
+  margin-top: 5rpx;
+  margin-right: auto;
+  padding-right: 65rpx;
+  padding-left: 35rpx;
+  padding-top: 10rpx;
+  padding-bottom: 7rpx;
+  border-radius: 8rpx;
+}
+
+.grid-item {
+  margin-top: 10rpx;
+  /*主要是添加了下面两句，设置content为弹性盒子且盒子换行*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img {
+  width: 246rpx;
+  height: 300rpx;
+  background-color: darkorange;
+  text-align: center;
+  border: solid #fff 1rpx;
+}
+
+.like-icon {
+  width: 30rpx;
+  height: 30rpx;
+  z-index: 10;
+  position: relative;
+  bottom: 17%;
+  right: 33%;
+}
+
+.like-num {
+  color: #fff;
+  font-size: 26rpx;
+  z-index: 10;
+  position: relative;
+  bottom: 18.5%;
+  right: 32%;
+}
+
+.van-tabs__scroll {
+  background-color: transparent !important;
+}
+
+.login-icon {
+  position: fixed;
+  top: 3.3vw;
+  left: 3.3vw;
+  width: 37rpx;
+  height: 37rpx;
+  opacity: 0.6;
+  /* z-index: -1; */
+}
+
+.login-denglu {
+  position: fixed;
+  top: 3.3vw;
+  left: 9.3vw;
+  /* width: 37rpx; */
+  /* height: 37rpx; */
+  opacity: 1;
+  color: #A68B57;
+  background-color: #fffa;
+  padding: 1vw;
+  border-radius: 2vw;
+  margin: -1vw 0 0 0vw;
+  /* z-index: -1; */
+}

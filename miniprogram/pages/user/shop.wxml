@@ -1,0 +1,24 @@
+<!--pages/user/shop.wxml-->
+<van-transition name="fade-left" wx:for="{{user_goods}}" custom-class="block" bind:after-leave="del" data-index="{{index}}">
+  <view class="card">
+    <van-col span="8">
+      <image class="img" mode="aspectFill" src="{{item.imgSrc}}" />
+    </van-col>
+    <van-col span="16">
+      <view class="right-body">
+        <view class="title">{{item.name}}</view>
+        <view class="description">{{item.description}}</view>
+        <view class="container">
+          <view class="location">
+            <image class="icon" src="../../images/icon/location-black.png"></image>
+            <text class="text">{{item.location}}</text>
+          </view>
+          <view class="option">
+            <view class="text" bindtap="goIndex" data-index="{{index}}">详情</view>
+            <view class="text" bindtap="delete" data-index="{{index}}">移除</view>
+          </view>
+        </view>
+      </view>
+    </van-col>
+  </view>
+</van-transition>

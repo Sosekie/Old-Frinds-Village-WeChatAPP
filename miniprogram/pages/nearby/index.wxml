@@ -1,0 +1,121 @@
+<page-meta page-style="{{ popShow ? 'overflow: hidden;' : '' }}" />
+<view class="near_out">
+  <view class="back_img" wx:if="{{show==1}}" bindtap="checked" data-id="{{2}}">
+    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/附近 (2).gif"></image>
+  </view>
+  <view class="option-card">
+    <view class="{{index==option?'option-sel':'option'}}" wx:for="{{['全部','风景','美食']}}" bindtap="selType" data-index="{{index}}">{{item}}</view>
+  </view>
+  <view class="view-map">
+    <map class="map" id="mainMap" latitude="{{latidude}}" longitude="{{longitude}}" show-location="true" subkey="7TZBZ-WIDCW-EUWRS-RDJAX-J5HFT-P2F2O" markers="{{markers}}" include-points="{{markers}}" bindmarkertap="chooseLoc"></map>
+    <view class="locate" bindtap="moveToCenter">
+      <image class="img" src="../../images/icon/locate.png"></image>
+    </view>
+    <view class="view-swiper">
+      <swiper class="swiper" previous-margin="40rpx" next-margin="40rpx" bindchange="swiperChange" current="{{choosedId}}">
+        <view class="item" wx:for="{{markers}}" data-index="{{item._id}}">
+          <swiper-item>
+            <view class="card" bindtap="showPop">
+              <van-row>
+                <van-col span="8">
+                  <view class="view-img">
+                    <image class="img" src="{{item.poster}}" />
+                  </view>
+                </van-col>
+                <van-col span="16">
+                  <view class="place-name">
+                    <text>{{item.name}}</text>
+                  </view>
+                  <view class="comment">
+                    <text class="detail">{{item.title}}</text>
+                  </view>
+                  <view class="bottom">
+                    <view class="like">
+                      <image class="like-icon" src="../../images/icon/like.png"></image>
+                      <text class="like-num">{{item.like}}</text>
+                    </view>
+                    <!-- <view class="distance">
+                      <image class="distance-icon" src="../../images/icon/distance.png"></image>
+                      <text class="distance-num">{{item.distance}}</text>
+                    </view> -->
+                  </view>
+                </van-col>
+              </van-row>
+            </view>
+          </swiper-item>
+        </view>
+      </swiper>
+    </view>
+    <view class="view-popup">
+      <van-popup show="{{ popShow }}" round close-on-click-overlay position="bottom" custom-style="height: 74%" bind:close="onClose">
+        <view class="detail-card">
+          <view class="upbody">
+            <van-row>
+              <van-col span="15">
+                <view class="card-item-poster">
+                  <image src="{{poster}}" mode="aspectFill" />
+                </view>
+              </van-col>
+              <van-col span="8">
+                <view class="img-left">
+                  <view class="block">
+                    <image src="{{head}}" class="head-img" />
+                    <view>
+                      <view class="message">{{name}}</view>
+                    </view>
+                  </view>
+                  <view class="block" bindtap="like">
+                    <image src="../../images/icon/like.png" mode="widthFix" wx-if="{{!islike}}" />
+                    <image src="../../images/icon/like.png" mode="widthFix" wx-if="{{islike}}" />
+                    <view>
+                      <text class="message">{{like}}</text>
+                    </view>
+                  </view>
+                  <view class="block">
+                    <image src="../../images/icon/location-black.png" class="location-icon" />
+                    <view>
+                      <view class="message-poi">{{position}}</view>
+                    </view>
+                  </view>
+                </view>
+              </van-col>
+            </van-row>
+          </view>
+          <view class="downbody">
+            <view class="info-cont">
+              <view class="info-cont-title">
+                {{title}}
+              </view>
+            </view>
+            <view class="content-wrapper">
+              <view class="content">
+                <!-- <view class="music">
+                  <image src="../../images/audioplayer/play.png" alt="" mode="widthFix" />
+                  <view class="music_discription">
+                    {{music}}
+                  </view>
+                </view> -->
+                <!-- <view class="shopping">
+                  <image src="{{shoppingImg}}" alt="" mode="widthFix" />
+                  <view class="shopping_discription_tent">
+                    {{shopping}}
+                  </view>
+                </view> -->
+                <view class="discription">
+                  {{comment}}
+                </view>
+                <view class="date">
+                  {{date}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="navigate" bindtap="goIndex" data-card_id="{{card_id}}" data-name="{{name}}" data-head="{{head}}">
+            <text class="showmore">去主页查看更多详细信息</text>
+            <view class="bottom-line"></view>
+          </view>
+        </view>
+      </van-popup>
+    </view>
+  </view>
+</view>

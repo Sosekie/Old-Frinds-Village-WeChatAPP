@@ -1,0 +1,127 @@
+<!--pages/user/profile.wxml-->
+<view class="upbody">
+  <view class="container">
+    <image class="head-img" src="{{headSrc}}" bindtap="changeHead"></image>
+  </view>
+  <view class="container">
+    <image class="camera" src="../../images/icon/camera.png"></image>
+  </view>
+  <view class="tip">点击图片更换头像</view>
+</view>
+<view class="list">
+  <van-cell-group inset>
+    <van-cell size="large" is-link>
+      <view slot="title">
+        <view class="list-container">
+          <text class="title">昵称</text>
+          <input value="{{username}}" bindinput="usernameConfirm" class="input" />
+        </view>
+      </view>
+    </van-cell>
+    <van-cell size="large" is-link>
+      <view slot="title">
+        <view class="list-container">
+          <text class="title">简介</text>
+          <input value="{{intro}}" bindinput="introConfirm" class="input" />
+        </view>
+      </view>
+    </van-cell>
+    <van-cell size="large" is-link>
+      <view slot="title">
+        <view class="list-container">
+          <text class="title">账号</text>
+          <text class="wechat-num">{{wechatNum}}</text>
+        </view>
+      </view>
+      <!--<view slot="">
+				<text class="right-text">与登陆微信绑定</text>
+      </view>-->
+    </van-cell>
+    <van-cell size="large" is-link>
+      <view slot="title">
+        <view class="list-container" bindtap="genderShow">
+          <text class="title">性别</text>
+          <text class="gender">{{gender}}</text>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell size="large" is-link>
+      <view slot="title">
+        <view class="list-container" bindtap="areaShow">
+          <text class="title">地点</text>
+          <text class="location">{{location}}</text>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell size="large" is-link>
+      <view slot="title">
+        <view class="list-container" bindtap="birthShow">
+          <text class="title">生日</text>
+          <text class="birth">{{birth}}</text>
+        </view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+
+  <view class="gender-picker">
+    <van-action-sheet show="{{ genderShow }}" actions="{{ actions }}" bind:close="onGenderClose" bind:select="onSelect" />
+  </view>
+  <view area-picker>
+    <van-popup show="{{ areaShow }}" position="bottom" round bind:close="onAreaClose">
+      <van-area area-list="{{ areaList }}" value="110101" title="请选择你的地点" bind:confirm="areaConfirm" bind:cancel="onAreaClose" />
+    </van-popup>
+  </view>
+  <van-popup show="{{ birthShow }}" position="bottom" round bind:close="onbirthClose">
+    <van-datetime-picker type="date" title="请选择你的生日" value="{{ currentDate }}" bind:input="onInput" bind:change="onChange" bind:confirm="birthConfirm" bind:cancel="onBirthClose" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+  </van-popup>
+
+</view>
+<view class="list">
+  <van-cell-group inset>
+    <van-cell size="large" is-link bindtap="changePassword">
+      <view slot="title">
+        <view class="list-container">
+          <image class="icon" src="../../images/icon/password.png" />
+          <text class="change-password">修改密码</text>
+        </view>
+      </view>
+    </van-cell>
+    <van-cell size="large" is-link bindtap="logout">
+      <view slot="title">
+        <view class="list-container">
+          <image class="icon" src="../../images/icon/logout.png" />
+          <text class="logout">退出登录</text>
+        </view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+
+<view class="pop">
+  <van-popup show="{{ changePassword }}" bind:close="onClose" round custom-style="width: 90%;">
+    <view class="container">
+      <view>旧密码</view>
+      <input class="input" name="passwordOld" value="{{passwordInput}}" placeholder="请输入旧密码" type="password" bindinput="inputPasswordOld" bindblur="passwordOldTip" />
+    </view>
+    <van-transition show="{{passwordOldTip}}" custom-class="block">
+      <view class="tip">
+        <view>旧密码有误</view>
+      </view>
+    </van-transition>
+
+    <view class="container">
+      <view>新密码</view>
+      <input class="input" name="passwordNew" value="{{passwordNew}}" placeholder="请输入新密码" type="password" bindinput="inputPasswordNew" bindblur="passwordNewTip" />
+    </view>
+    <van-transition show="{{passwordNewTip}}" custom-class="block">
+      <view class="tip">
+        <view>密码长度为6-18位</view>
+      </view>
+    </van-transition>
+
+    <view class="button-view">
+      <button class="button" form-type="submit" bindtap="submit" bindtap="confirmPassword">确认</button>
+    </view>
+
+  </van-popup>
+</view>

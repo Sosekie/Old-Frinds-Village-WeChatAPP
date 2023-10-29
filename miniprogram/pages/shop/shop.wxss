@@ -1,0 +1,55 @@
+/* pages/user/shop.wxss */
+.trans{
+  display: block;
+}
+.card{
+  width: 87%;
+  height: 235rpx;
+  border-radius: 24rpx;
+  margin: 15rpx auto;
+  padding: 20rpx;
+  box-shadow: 0px 11px 34px rgba(158, 158, 158, 0.1),
+    0px 5.9437px 18.4156px rgba(153, 153, 153, 0.075),
+    0px 4.2px 51.775px rgba(156, 156, 156, 0.05),
+    0px 3.10625px 7.74687px rgba(151, 151, 151, 0.075);
+}
+.img{
+  height: 230rpx;
+  width: 230rpx;
+  border-radius: 24rpx;
+}
+.right-body{
+  margin-left: 40rpx;
+  margin-top: 8rpx;
+}
+.title{
+  font-weight: 600;
+  font-size: large;
+}
+.description{
+  font-size: smaller;
+  margin-top: 15rpx;
+  height: 105rpx;
+}
+.location .text{
+  font-size: small;
+  margin-left: 7rpx;
+  vertical-align: 5rpx;
+}
+.location .icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.option .text{
+  font-size:small;
+  color: #555;
+  margin-bottom: 10rpx;
+  margin-right: 14rpx;
+  border-bottom: solid #555 1rpx;
+}
+

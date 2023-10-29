@@ -1,0 +1,138 @@
+<view class="index">
+  <van-tabs swipeable color="#000" line-width="100rpx" animated>
+    <van-tab title="乡旅动态">
+      <view class="back_img">
+        <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/乡旅动态.gif"></image>
+      </view>
+      <view class="zhuye_img">
+        <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/乡旅动态title.jpg" mode="widthFix"></image>
+      </view>
+      <view class="zhuye">
+        <view class="leftbar">
+          <block wx:for="{{cards1}}" wx:for-item="item" wx:for-index="index" wx:if="{{index%2==0 }}">
+            <view class="card-item">
+              <view class="card-item-poster">
+                <image src="{{item.poster[0]}}" mode="widthFix"></image>
+              </view>
+              <view class="info-cont">
+                <view class="info-cont-title">{{''+item.title+''}}</view>
+                <view class="info-cont-user">
+                  <view class="left">
+                    <image src="{{item.head}}"></image>
+                    <view class="info-cont-name">{{''+item.name+''}}</view>
+                  </view>
+                  <view class="right">
+                    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/aixin.png" mode="widthFix"></image>
+                    <view>{{item.like}}</view>
+                  </view>
+                </view>
+              </view>
+              <navigator url="{{'/pages/index/card_open/card_open?cs1=' + item._id + '&name=' + item.name +'&head='+item.head}}">
+                <view class="content-wrapper">
+                  <view class="content">
+                    <view class="position">
+                      <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/dingwei.png" alt mode="widthFix"></image>
+                      <view class="position_discription">{{''+item.position+''}}</view>
+                    </view>
+                    <!-- <view class="music">
+                    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/yinleyule.png" alt mode="widthFix"></image>
+                    <view class="music_discription">{{''+item.music+''}}</view>
+                  </view> -->
+                    <view class="shopping">
+                      <image src="{{item.shoppingImg}}" alt mode="widthFix"></image>
+                      <view class="shopping_discription_tent">{{''+item.shopping+''}}</view>
+                    </view>
+                    <view class="open">展开 ></view>
+                    <view class="discription"></view>
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </view>
+        <view class="rightbar">
+          <block wx:for="{{cards1}}" wx:for-item="item" wx:for-index="index" wx:if="{{index%2==1}}">
+            <view class="card-item">
+              <view class="card-item-poster">
+                <image src="{{item.poster[0]}}" mode="widthFix"></image>
+              </view>
+              <view class="info-cont">
+                <view class="info-cont-title">{{''+item.title+''}}</view>
+                <view class="info-cont-user">
+                  <view class="left">
+                    <image src="{{item.head}}"></image>
+                    <view class="info-cont-name">{{''+item.name+''}}</view>
+                  </view>
+                  <view class="right">
+                    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/aixin.png" mode="widthFix"></image>
+                    <view>{{item.like}}</view>
+                  </view>
+                </view>
+              </view>
+              <navigator url="{{'/pages/index/card_open/card_open?cs1=' + item._id + '&name=' + item.name +'&head='+item.head}}">
+                <view class="content-wrapper">
+                  <view class="content">
+                    <view class="position">
+                      <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/dingwei.png" alt mode="widthFix"></image>
+                      <view class="position_discription">{{''+item.position+''}}</view>
+                    </view>
+                    <!-- <view class="music">
+                    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/yinleyule.png" alt mode="widthFix"></image>
+                    <view class="music_discription">{{''+item.music+''}}</view>
+                  </view> -->
+                    <view class="shopping">
+                      <image src="{{item.shoppingImg}}" alt mode="widthFix"></image>
+                      <view class="shopping_discription_tent">{{''+item.shopping+''}}</view>
+                    </view>
+                    <view class="open">展开 ></view>
+                    <view class="discription"></view>
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="热度排行">
+      <view class="back_img">
+        <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/热度排行 (2).gif"></image>
+      </view>
+      <view class="zhuye_img">
+        <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/热度排行title.jpg" mode="widthFix"></image>
+      </view>
+      <view class="rank">
+        <block wx:for="{{cards2}}" wx:for-item="item" wx:for-index="index">
+          <view class="card">
+            <view class="pic">
+              <image src="{{item.poster[0]}}" class="_img"></image>
+            </view>
+            <navigator url="{{'/pages/index/card_open/card_open?cs1=' + item._id + '&name=' + item.name +'&head='+item.head}}">
+              <view class="content">
+                <view class="title">{{''+item.position+''}}</view>
+                <view class="preview">
+                  <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/pinglun (1).png" mode="widthFix"></image>
+                  <view class="tent">{{'“'+item.description+'”'}}</view>
+                </view>
+                <view class="zan">
+                  <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/icon/aixin.png" mode="widthFix"></image>
+                  <view class="tent">{{'近来收获了'+item.like+'个喜欢！'}}</view>
+                </view>
+                <view class="user">
+                  <view class="left">
+                    <image src="{{item.head}}"></image>
+                    <view class="name">{{''+item.name+''}}</view>
+                  </view>
+                  <view class="right">查看详情-></view>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+  <view class="loading" hidden="{{!loadMore}}">正在载入更多...</view>
+  <view class="loading" hidden="{{!loadAll}}">已加载全部</view>
+</view>

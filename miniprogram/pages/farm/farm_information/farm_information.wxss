@@ -1,0 +1,186 @@
+.content {
+  padding: 3.3vw;
+  /* background-color: #7ba0a8; */
+  min-height: 120vh
+}
+
+.back_img image {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: -4vw 0 0vw -4vw;
+  border-radius: 0;
+  position: fixed;
+  z-index: -1;
+  display: block;
+}
+
+.farm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start
+}
+
+.head {
+  width: 55vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin: 0 0 3.3vw 0
+}
+
+.head image {
+  width: 35vw;
+  height: 35vw;
+  -webkit-filter: drop-shadow(5px 5px 4px #5e5498);
+  filter: drop-shadow(5px 5px 4px #5e5498)
+}
+
+.head .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start
+}
+
+.head .right .name {
+  padding: 2vw 3.3vw;
+  background-color: #A68B57ee;
+  color: #fff;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw 2vw 0 0;
+  width: 51.7vw;
+  font-size: 6vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  text-align: center;
+  margin: 0 0 0 0
+}
+
+.head .right .farm_type {
+  padding: 1vw 3.3vw;
+  background-color: #A68B5755;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 0 0 2vw 2vw;
+  color: #555;
+}
+
+.head .right .type {
+  width: 51.7vw;
+  margin: 0 0 1vw 0;
+  font-size: 4vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #333;
+  text-align: left
+}
+
+.land {
+  padding: 3.3vw 3.3vw;
+  background-color: #fffa;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  margin: 0 0 3.3vw 0
+}
+
+.landtitle {
+  font-size: 4vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  text-align: center;
+  padding: 2vw 3.3vw;
+  background-color: #A68B57ee;
+  color: #fff;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  border-radius: 2vw;
+  margin: 0 0 3.3vw 0
+}
+
+.landbarhead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 4vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #000;
+  text-align: left;
+  margin-bottom: 3.3vw;
+}
+
+.landbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 3vw;
+  font-family: Youyuan;
+  font-weight: 900;
+  color: #555;
+  text-align: center;
+  margin: 1vw 0 0 0;
+  padding: 1vw;
+  border-radius: 1vw
+}
+
+.landbar:nth-child(2n) {
+  background-color: #A68B5755;
+}
+
+.landbar:nth-child(2n+1) {
+  background-color: #fff5;
+}
+
+.land .name,
+.plant,
+.output,
+.people {
+  width: 20vw;
+  text-align: center;
+}
+
+.land .people {
+  width: 30vw;
+  text-align: right;
+  margin-right: 3.3vw;
+}
+
+.land .no_people {
+  color: #999;
+  width: 30vw;
+  text-align: right;
+  margin-right: 3.3vw;
+  border-bottom: 1px solid #999
+}
+
+.map {
+  margin: 0 0 3.3vw 0;
+  border-radius: 2vw;
+  overflow: hidden;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125)
+}
+
+.photolist {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  height: 50vw;
+  margin: 0 0 3.3vw 0
+}
+
+.photo {
+  height: 50vw
+}
+
+.photolist ._img {
+  height: 50vw;
+  width: 35vw;
+  object-fit: cover;
+  border-radius: 2vw;
+  box-shadow: 0 11px 34px rgba(94, 84, 152, .2), 0 5.9437px 18.4156px rgba(94, 84, 152, .175), 0 4.2px 51.775px rgba(94, 84, 152, .1), 0 3.10625px 7.74687px rgba(94, 84, 152, .125);
+  margin: 0 2vw 0 0
+}

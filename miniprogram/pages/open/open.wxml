@@ -1,0 +1,10 @@
+<view>
+  <view class="open">
+    <view>
+      <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/进入.gif"></image>
+    </view>
+    <button bindtap="goNext" class="but">
+      开始使用
+    </button>
+  </view>
+</view>

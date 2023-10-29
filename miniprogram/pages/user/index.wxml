@@ -1,0 +1,138 @@
+<!--pages/user/index.wxml-->
+<view>
+  <view class="background">
+  </view>
+  <view class="back_img">
+    <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/我的.gif"></image>
+  </view>
+  <view class="foreground">
+    <van-row>
+      <van-col span="6">
+        <image class="user-head" src="{{headSrc}}"></image>
+      </van-col>
+      <van-col span="18">
+        <view class="row-container">
+          <view class="col-container">
+            <view class="gray-font">足迹</view>
+            <view class="weight-num"><text>{{upLength}}</text></view>
+          </view>
+          <view class="col-container">
+            <view class="gap-line-col"></view>
+          </view>
+          <view class="col-container">
+            <view class="gray-font">喜欢</view>
+            <view class="weight-num"><text>{{likeLength}}</text></view>
+          </view>
+          <view class="col-container">
+            <view class="gap-line-col"></view>
+          </view>
+          <view class="col-container">
+            <view class="gray-font">获赞</view>
+            <view class="weight-num"><text>{{beLikedNum}}</text></view>
+          </view>
+          <view class="col-container">
+            <view class="gap-line-col"></view>
+          </view>
+          <view class="col-container">
+            <view class="gray-font">余额</view>
+            <view class="weight-num"><text>{{money}}</text></view>
+          </view>
+        </view>
+      </van-col>
+    </van-row>
+    <view class="user-info-text">
+      <view class="username">
+        <text>{{username}}</text>
+      </view>
+      <view class="user-num">
+        <text>{{wechatNum}}</text>
+      </view>
+    </view>
+    <view class="gap-line">
+      <view class="home-header-line"></view>
+    </view>
+    <view class="user-info-tag" bindtap="editProfile">
+      <view class="tag">
+        <image class="icon" src="../../images/icon/male.png" wx:if="{{gender=='男'}}"></image>
+        <image class="icon" src="../../images/icon/female.png" wx:if="{{gender=='女'}}"></image>
+        <image class="icon" src="../../images/icon/male.png" wx:if="{{gender==''}}"></image>
+        <text class="message">{{gender}}</text>
+      </view>
+      <view class="tag">
+        <image class="icon" src="../../images/icon/location-orange.png"></image>
+        <text class="message">{{location}}</text>
+      </view>
+      <view class="tag">
+        <image class="icon" src="../../images/icon/age.png"></image>
+        <text class="message">{{birth}}</text>
+      </view>
+      <view class="tag">
+        <image class="icon" src="../../images/icon/add.png"></image>
+        <text class="message">编辑</text>
+      </view>
+    </view>
+    <view class="user-info-intro">
+      <text>{{intro}}</text>
+    </view>
+    <view class="gap-line">
+      <view class="home-header-line"></view>
+    </view>
+    <view class="funtion">
+      <view class="fun" bindtap="goShoppingcar">
+        <image class="fun-img" src="../../images/icon/shopcar.png"></image>
+        <text class="fun-text">心愿清单</text>
+      </view>
+      <view class="fun">
+        <navigator url="{{'/components/user/farm_manage?cs1='+id+'&cs2='+user_type}}">
+          <image class="fun-img" src="../../images/icon/landmanage.png"></image>
+          <text class="fun-text" bindtap="gofarm">土地管理</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="grid">
+      <van-tabs swipeable color="#000" line-width="100rpx" animated>
+        <van-tab title="发布">
+          <view class="grid-item" name='0'>
+            <view class="item" wx:for="{{upList}}" data-index="{{item._id}}">
+              <navigator url="{{'/pages/index/card_open/card_open?cs1=' + item._id + '&name=' + username +'&head='+headSrc}}">
+                <view class="img">
+                  <image class="img" src="{{item.poster[0]}}" mode="aspectFill" bindtap="goIndex"></image>
+                  <image class="like-icon" src="../../images/icon/like-white.png"></image>
+                  <text class="like-num">{{item.like}}</text>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="收藏">
+          <view class="grid-item" name='1'>
+            <view class="item" wx:for="{{likeList}}" wx:for-item="item" bindtap="goIndex" data-index="{{index}}">
+              <navigator url="{{'/pages/index/card_open/card_open?cs1=' + item._id + '&name=' + username +'&head='+headSrc}}">
+                <view class="img">
+                  <image class="img" src="{{item.poster[0]}}" mode="aspectFill" bindtap=""></image>
+                  <image class="like-icon" src="../../images/icon/like-white.png"></image>
+                  <text class="like-num">{{item.like}}</text>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="最近">
+          <view class="grid-item" name='2'>
+            <view class="item" wx:for="{{recList}}" bindtap="goIndex" data-index="{{index}}">
+              <view class="img">
+                <image class="img" src="{{item.url}}" mode="aspectFill" bindtap=""></image>
+                <image class="like-icon" src="../../images/icon/like-white.png"></image>
+                <text class="like-num">{{item.like}}</text>
+              </view>
+            </view>
+          </view>
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+  <!--<view class="login" bindtap="goLogin">
+    <image class="login-icon" src="../../images/icon/login.png" />
+    <view class="login-denglu">登录/注册</view>
+  </view>-->
+</view>

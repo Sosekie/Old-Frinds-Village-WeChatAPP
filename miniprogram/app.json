@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/open/open",
+    "pages/index/index",
+    "pages/index/card_open/card_open",
+    "pages/nearby/index",
+    "pages/up/index",
+    "pages/farm/farm_information/farm_information",
+    "pages/farm/renLing/renLing",
+    "pages/farm/index",
+    "pages/user/index",
+    "pages/user/profile",
+    "pages/user/shop",
+    "components/user/farm_manage",
+    "pages/user/login/index",
+    "pages/user/register/index"
+
+  ],
+  "requiredPrivateInfos": [
+    "chooseLocation"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "故人庄",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "./images/tabBar/1.jpg",
+        "selectedIconPath": "./images/tabBar/1.jpg"
+      },
+      {
+        "pagePath": "pages/nearby/index",
+        "text": "附近",
+        "iconPath": "./images/tabBar/2.jpg",
+        "selectedIconPath": "./images/tabBar/2.jpg"
+      },
+      {
+        "pagePath": "pages/up/index",
+        "text": "发布",
+        "iconPath": "./images/tabBar/3-2.jpg",
+        "selectedIconPath": "./images/tabBar/3-2.jpg"
+      },
+      {
+        "pagePath": "pages/farm/index",
+        "text": "农场",
+        "iconPath": "./images/tabBar/4.jpg",
+        "selectedIconPath": "./images/tabBar/4.jpg"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "./images/tabBar/5.jpg",
+        "selectedIconPath": "./images/tabBar/5.jpg"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-picker": "@vant/weapp/picker/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

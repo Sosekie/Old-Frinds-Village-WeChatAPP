@@ -1,0 +1,24 @@
+/* pages/open/open.wxss */
+.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+image {
+  width: 100vw;
+  height: 100vh;
+}
+
+.but {
+  position: fixed;
+  bottom: 12vh;
+  width: 40vw;
+  margin: 0 30vw;
+  background-color: #bcc06eee;
+  border-radius: 5vw;
+  color: #fff;
+}

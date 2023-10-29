@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "乡旅发现",
+  "enablePullDownRefresh": false,
+  "usingComponents": {},
+  "onReachBottomDistance": 150
+}

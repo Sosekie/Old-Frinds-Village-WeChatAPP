@@ -1,0 +1,79 @@
+<view>
+  <view class="content">
+    <view class="back_img">
+      <image src="cloud://cloud1-0g3t249cf8fbcd65.636c-cloud1-0g3t249cf8fbcd65-1312169160/beauti_pic/土地背景.jpg"></image>
+    </view>
+    <block wx:for="{{farm_info}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <block wx:if="{{item._id==flag}}">
+        <view class="farm">
+          <view class="head">
+            <view class="pic">
+              <image src="{{item.poster}}" mode></image>
+            </view>
+            <view class="right">
+              <view class="name">{{''+item.name+''}}</view>
+              <view class="farm_type">
+                <view class="type">{{'主营：'+item.type+''}}</view>
+                <view class="type">{{'地址：'+item.position+''}}</view>
+                <view class="type">{{'土地情况：'+(item.sum-item.empty_sum)+"/"+item.sum+''}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="landtitle">该农场详细信息：</view>
+          <view class="land">
+            <view class="landbarhead">
+              <view class="name">田地名称</view>
+              <view class="plant">种植作物</view>
+              <view class="output">预计产量</view>
+              <view class="people">认领用户</view>
+            </view>
+            <block wx:for="{{item.land}}" wx:for-item="landitem" wx:for-index="index" wx:key="index">
+              <view class="landbar">
+                <view class="name">
+                  <navigator url='/pages/farm/renLing/renLing?cs1={{landitem.id}}&cs2={{flag}}' class="navigator">{{''+landitem.name+''}}</navigator>
+                </view>
+                <view class="plant">
+                  <navigator url='/pages/farm/renLing/renLing?cs1={{landitem.id}}&cs2={{flag}}' class="navigator">
+                    {{''+landitem.plant+''}}
+                  </navigator>
+                </view>
+                <view class="output">
+                  <navigator url='/pages/farm/renLing/renLing?cs1={{landitem.id}}&cs2={{flag}}' class="navigator">
+                    {{''+landitem.output+''}}
+                  </navigator>
+                </view>
+                <block wx:if="{{landitem.is_rent}}">
+                  <view class="people">
+                    <navigator url='/pages/farm/renLing/renLing?cs1={{landitem.id}}&cs2={{flag}}' class="navigator">
+                      {{''+user[landitem.rent_people].name+''}}
+                    </navigator>
+                  </view>
+                </block>
+                <block wx:if="{{!landitem.is_rent}}">
+                  <view class="no_people">
+                    <navigator url='/pages/farm/renLing/renLing?cs1={{landitem.id}}&cs2={{flag}}' class="navigator">
+                      暂无，去认领->
+                    </navigator>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+          <view class="landtitle">该农场实景展示：</view>
+          <view class="photolist">
+            <block wx:for="{{item.farm_photo}}" wx:for-item="photo" wx:for-index="__i1__">
+              <view class="photo">
+                <image src="{{photo}}" mode class="_img"></image>
+              </view>
+            </block>
+          </view>
+          <view class="landtitle">该农场地理位置：</view>
+          <view class="map">
+            <map style="width:100%;height:30vh;border-radius:3vw;" id="mymap" longitude="{{item.longitude}}" latitude="{{item.latitude}}" markers="{{markers}}" wx:if=" {{showMap}}">
+            </map>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
